@@ -77,6 +77,11 @@ class DemoApp(App):
         with open(fn) as fd:
             return fd.read()
 
+    def go_screen(self, idx):
+        self.index = idx
+        self.root.ids.sm.switch_to(self.load_screen(idx), direction='left')
+        self.update_sourcecode()
+
 
 if __name__ == "__main__":
     DemoApp().run()

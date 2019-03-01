@@ -7,33 +7,89 @@ DemoScreen:
         size_hint_y: None
         height: '48dp'
 
-        ToggleButton:
+        Button:
             id: tbh
             text: 'Horizontal'
             group: 'accordion'
             state: 'down'
 
-        ToggleButton:
-            text: 'Vertical'
-            group: 'accordion'
+        #ToggleButton:
+            #text: 'Vertical'
+            #group: 'accordion'
 
     Accordion:
 
-        orientation: 'horizontal' if tbh.state == 'down' else 'vertical'
+        #orientation: 'horizontal' if tbh.state == 'down' else 'vertical'
+        orientation: 'horizontal'
 
         AccordionItem:
-            title: 'Panel 1'
+            title: 'Jan.'
             Label:
                 text: 'This is a label fit to the content view'
                 text_size: self.width, None
 
         AccordionItem:
-            title: 'Panel 2'
-            Button:
-                text: 'A button, what else?'
+            title: 'Feb'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
 
         AccordionItem:
-            title: 'Panel 3'
+            title: 'Mar.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Apr.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'May.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Jun.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Jul.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Aug.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Sep.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Oct.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Nov.'
+            Label:
+                text: 'This is a label fit to the content view'
+                text_size: self.width, None
+
+        AccordionItem:
+            title: 'Dec.'
             Label:
                 text: 'This is a label fit to the content view'
                 text_size: self.width, None

@@ -51,7 +51,7 @@ BoxLayout:
             id: av
             ActionPrevious:
                 with_previous: (False if sm.current_screen.name == 'button' else True) if sm.current_screen else False
-                title: 'Showcase' + ('' if not app.current_title else ' - {}'.format(app.current_title))
+                title: 'DemoApp' + ('' if not app.current_title else ' - {}'.format(app.current_title))
                 on_release: app.go_hierarchy_previous()
 
             ActionSpinner:
@@ -65,12 +65,12 @@ BoxLayout:
                     app.go_screen(idx)
             ActionButton:
                 text: 'Previous screen'
-                icon: 'data/icons/chevron-left.png'
+                icon: 'data/icons/LeftArror.png'
                 on_release: app.go_previous_screen()
 
             ActionButton:
                 text: 'Next screen'
-                icon: 'data/icons/chevron-right.png'
+                icon: 'data/icons/RightArror.png'
                 on_release: app.go_next_screen()
                 important: True
 
