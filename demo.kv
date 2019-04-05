@@ -1,0 +1,160 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<RootScreen>:
+    transition: FadeTransition()
+    SearchScreen:
+    CalendarScreen:
+    InputScreen:
+
+
+<CalendarScreen>:
+    name: "calendar"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "data/start_bg.png"
+    FloatLayout:
+
+        Button:
+            id: btn
+            text: 'Screen List'
+            on_release: switch.open(self)
+            size_hint: 0.25, 0.1
+            pos_hint: {'center_x':.85, 'center_y':.1}
+
+        Widget:
+            on_parent: switch.dismiss()
+
+        DropDown:
+
+            id: switch
+            on_select: root.manager.current = args[1]
+
+            Button:
+                text: 'calendar'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('calendar')
+
+            Button:
+                text: 'input'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('input')
+
+            Button:
+                text: 'search'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('search')
+
+<SearchScreen>:
+    name: "search"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Button:
+            id: btn
+            text: 'Screen List'
+            on_release: switch.open(self)
+            size_hint: 0.25, 0.1
+            pos_hint: {'center_x':.85, 'center_y':.1}
+
+        Widget:
+            on_parent: switch.dismiss()
+
+        DropDown:
+
+            id: switch
+            on_select: root.manager.current = args[1]
+
+            Button:
+                text: 'calendar'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('calendar')
+
+            Button:
+                text: 'input'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('input')
+
+            Button:
+                text: 'search'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('search')
+
+
+
+<InputScreen>:
+    name: "input"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "data/input_bg.png"
+
+
+    FloatLayout:
+
+        Button:
+            text: "Crete Time Slot"
+            size_hint: 0.4, 0.1
+            pos_hint: {'center_x':.5, 'center_y':.3}
+            font_size: 30
+            on_release: root.send_data()
+
+        Label:
+            text: "Course Subject: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.8}
+        Label:
+            text: "Course Number: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.7}
+        Label:
+            text: "Start Time: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.6}
+        Label:
+            text: "End Time: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.5}
+
+        Button:
+            id: btn
+            text: 'Screen List'
+            on_release: switch.open(self)
+            size_hint: 0.25, 0.1
+            pos_hint: {'center_x':.85, 'center_y':.1}
+
+        Widget:
+            on_parent: switch.dismiss()
+
+        DropDown:
+
+            id: switch
+            on_select: root.manager.current = args[1]
+
+            Button:
+                text: 'calendar'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('calendar')
+
+            Button:
+                text: 'input'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('input')
+
+            Button:
+                text: 'search'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('search')
