@@ -2,20 +2,55 @@
 
 <RootScreen>:
     transition: FadeTransition()
+    LoginScreen:
+    UserScreen
     SearchScreen:
     CalendarScreen:
     InputScreen:
 
 
-<CalendarScreen>:
-    name: "calendar"
+<LoginScreen>:
+    name: "login"
+
     canvas.before:
         Rectangle:
             pos: self.pos
             size: self.size
-            source: "data/start_bg.png"
-    FloatLayout:
+            source: "data/login_bg.png"
 
+    FloatLayout:
+        Label:
+            text: "App Login"
+            font_size: 40
+            pos_hint: {'center_x':.5, 'center_y':.85}
+
+        Button:
+            text: 'Login'
+            pos_hint: {'center_x':.5, 'center_y':.15}
+            size_hint: 0.3, 0.1
+            on_release: root.check_login()
+
+        Label:
+            text: "Name: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.7}
+
+        Label:
+            text: "ID: "
+            font_size: 25
+            pos_hint: {'center_x':.25, 'center_y':.6}
+
+
+<UserScreen>:
+    name: "user"
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "data/user_bg.png"
+
+    FloatLayout:
         Button:
             id: btn
             text: 'Screen List'
@@ -48,6 +83,61 @@
                 size_hint_y: None
                 height: '48dp'
                 on_release: switch.select('search')
+
+            Button:
+                text: 'user'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('user')
+
+
+<CalendarScreen>:
+    name: "calendar"
+
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "data/start_bg.png"
+        Button:
+            id: btn
+            text: 'Screen List'
+            on_release: switch.open(self)
+            size_hint: 0.25, 0.1
+            pos_hint: {'center_x':.85, 'center_y':.1}
+
+        Widget:
+            on_parent: switch.dismiss()
+
+        DropDown:
+
+            id: switch
+            on_select: root.manager.current = args[1]
+
+            Button:
+                text: 'calendar'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('calendar')
+
+            Button:
+                text: 'input'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('input')
+
+            Button:
+                text: 'search'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('search')
+
+            Button:
+                text: 'user'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('user')
 
 <SearchScreen>:
     name: "search"
@@ -55,7 +145,20 @@
         Rectangle:
             pos: self.pos
             size: self.size
+            source: "data/search_bg.png"
     FloatLayout:
+        Label:
+            text: 'Course Search'
+            font_size: 40
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+        Button:
+            text: 'Search'
+            font_size: 25
+            pos_hint: {'center_x': 0.8, 'center_y': 0.8}
+            size_hint: .2, .08
+            on_release: root.course_search()
+
         Button:
             id: btn
             text: 'Screen List'
@@ -88,6 +191,12 @@
                 size_hint_y: None
                 height: '48dp'
                 on_release: switch.select('search')
+
+            Button:
+                text: 'user'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('user')
 
 
 
@@ -158,3 +267,9 @@
                 size_hint_y: None
                 height: '48dp'
                 on_release: switch.select('search')
+
+            Button:
+                text: 'user'
+                size_hint_y: None
+                height: '48dp'
+                on_release: switch.select('user')
