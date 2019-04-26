@@ -1,8 +1,13 @@
 # Smart-Calendar
 
-> Impliment calendar structure:\
-> Calendar Class -> Year Class -> Month Class -> Day Class -> Event Class
+# How to run
+> Open CMD window on the master folder
+> Use command: \
+python main.py \
+to run.
 
-# User inerfaces:
-> Input event name and time to create new event.\
-> Get event info using: a) Event name     b) Certain time period
+# Version Update
+> April 26th \
+> Ver 0.0.1 \
+> Implemented login screen, user screen, input screen, course search screen, and calendar screen.\
+
